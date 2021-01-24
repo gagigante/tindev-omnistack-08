@@ -15,7 +15,7 @@
     }
   },
   "lint-staged": {
-    "packages/**/**.js?(x)": [
+    "packages/**/src/**.js?(x)": [
       "eslint --max-warnings=0 --fix",
       "cross-env CI=true yarn test --bail --findRelatedTests"
     ]

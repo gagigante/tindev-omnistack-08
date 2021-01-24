@@ -39,6 +39,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'no-unused-expressions': 'off',
+    'no-underscore-dangle': 'off',
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
     'import/prefer-default-export': 'off',
     'import/no-duplicates': 'off',
