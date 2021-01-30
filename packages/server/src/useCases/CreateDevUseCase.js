@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import DevRepository from '../repositories/DevRepository';
 
-const createDevUseCase = {
+const CreateDevUseCase = {
   async execute({ username }) {
     const userExists = await DevRepository.findByUsername({ username });
 
@@ -25,4 +25,4 @@ const createDevUseCase = {
   },
 };
 
-export default createDevUseCase;
+export default CreateDevUseCase;

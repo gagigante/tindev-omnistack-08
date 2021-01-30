@@ -1,6 +1,6 @@
 import DevRepository from '../repositories/DevRepository';
 
-const getAvailableUsersUseCase = {
+const GetAvailableUsersUseCase = {
   async execute({ userId }) {
     const loggedDev = await DevRepository.findById({ userId });
 
@@ -10,4 +10,4 @@ const getAvailableUsersUseCase = {
   },
 };
 
-export default getAvailableUsersUseCase;
+export default GetAvailableUsersUseCase;
