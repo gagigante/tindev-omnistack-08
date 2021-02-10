@@ -11,9 +11,6 @@ routes.get(
   celebrate({
     [Segments.HEADERS]: Joi.object({
       user: Joi.string().required(),
-      host: Joi.string().required(),
-      'user-agent': Joi.string().required(),
-      accept: Joi.string().required(),
     }).unknown(),
   }),
   DevController.index,
