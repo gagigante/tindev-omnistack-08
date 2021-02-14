@@ -1,7 +1,7 @@
 import LikeUserUseCase from '../useCases/LikeUserUseCase';
 
-const LikeController = {
-  async store(req, res) {
+class LikeController {
+  static async store(req, res) {
     const { user } = req.headers;
     const { devId } = req.params;
 
@@ -12,7 +12,7 @@ const LikeController = {
     });
 
     return res.json(response);
-  },
-};
+  }
+}
 
 export default LikeController;
