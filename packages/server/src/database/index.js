@@ -2,13 +2,18 @@ import mongoose from 'mongoose';
 
 class Database {
   constructor() {
-    mongoose.connect(process.env.MONGO_URL, {
-      dbName: 'tindev',
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-    });
+    try {
+      mongoose.connect(process.env.MONGO_URL, {
+        dbName: process.env.DB_NAME,
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+        useCreateIndex: true,
+      });
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.log(err);
+    }
   }
 }
 

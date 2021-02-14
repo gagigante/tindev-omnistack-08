@@ -1,6 +1,8 @@
+.vscode
 node_modules
 dist
 yarn-error.log
 .env
 .eslintcache
 coverage
+globalConfig.json
