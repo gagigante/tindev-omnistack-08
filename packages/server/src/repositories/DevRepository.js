@@ -1,21 +1,21 @@
 import Dev from '../database/schemas/Dev';
 
-const DevRepository = {
-  async findById({ userId }) {
+class DevRepository {
+  static async findById({ userId }) {
     const user = await Dev.findById(userId);
 
     return user;
-  },
+  }
 
-  async findByUsername({ username }) {
+  static async findByUsername({ username }) {
     const user = await Dev.findOne({
       user: username,
     });
 
     return user;
-  },
+  }
 
-  async findAvailableDevs({ user }) {
+  static async findAvailableDevs({ user }) {
     const users = await Dev.find({
       $and: [
         { _id: { $ne: user._id } },
@@ -25,9 +25,9 @@ const DevRepository = {
     });
 
     return users;
-  },
+  }
 
-  async createDev({ name, username, bio, avatar }) {
+  static async createDev({ name, username, bio, avatar }) {
     const dev = await Dev.create({
       name,
       user: username,
@@ -36,7 +36,7 @@ const DevRepository = {
     });
 
     return dev;
-  },
-};
+  }
+}
 
 export default DevRepository;

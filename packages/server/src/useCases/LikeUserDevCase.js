@@ -1,7 +1,7 @@
 import DevRepository from '../repositories/DevRepository';
 
-const LikeUserUseCase = {
-  async execute({ loggedUserId, targetDevId, req }) {
+class LikeDevUseCase {
+  static async execute({ loggedUserId, targetDevId, req }) {
     const loggedDev = await DevRepository.findById({ userId: loggedUserId });
     const targetDev = await DevRepository.findById({ userId: targetDevId });
 
@@ -27,7 +27,7 @@ const LikeUserUseCase = {
     await loggedDev.save();
 
     return loggedDev;
-  },
-};
+  }
+}
 
-export default LikeUserUseCase;
+export default LikeDevUseCase;
